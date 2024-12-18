@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alvin's website</title>
+    <link rel="stylesheet" href="alvin2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+</head>
+<body>
+
+    <header>
+        <div class="head-links">
+            <p>Home</p>
+            <p>About</p>
+            <p>Portfolio</p>
+            <p>Contact</p>
+        </div>
+    </header>
+    <div class="main-footer-wrapper">
+        <div class="bg-getintouch"></div>
+        <main class="main-content">
+            <div class="bg-mywork"></div>
+            <div class="bg-circle1"></div>
+            <div class="bg-circle2"></div>
+            <div class="bg-reviews"></div>
+            <div class="bg-scratch-one"></div>
+            <div class="bg-scratch-two"></div>
+            <div class="bg-scratch-three"></div>
+            <div class="bg-camera"></div>
+            <div class="bg-line1"></div>
+            <div class="bg-line2"></div>
+            <div class="bg-line3"></div>
+            <div class="bg-box"></div> 
+
+            <div class="modal">
+                <img class="close" id="close-modal" src="./elements/x.png" alt="close-button">
+                <img class="content-img" id="content-modal">
+                <video class="content-video" src=""></video>
+                <div class="nav-buttons">
+                    <button id="prev2"><</button>
+                    <button id="next2">></button>
+                </div>
+            </div>
+
+            <div class="skull-video">
+                <video src="./anim/skull.alpha-nuevo.webm" muted autoplay playsinline></video>
+            </div>
+
+            <div class="intro-container">
+                <div class="text-one">
+                    <p>Alvaro Velasquez is a videographer & content creator<br>
+                    located in Orlando, FL.</p>
+                </div>
+                <div class="presentation-video">
+                    <div class="video-wrapper"><video src="./vids/nova.reel.mp4" muted autoplay playsinline loop></video></div>                    
+                </div>
+                <div class="text-two">
+                    <p>With<br>experience<br>in different<br>styles,<br>portraits<br>
+                    and brands,<br>Alvaro<br>has worked<br>and achieved<br>
+                    different<br>projects,<br>internationally</p>
+                </div>
+            </div>
+
+            <div class="video-container">
+                <div class="three-videos">
+                    <div class="product">
+                        <img src="./footage/product/5.cover.png" alt="">
+                        <p>Product</p>
+                    </div>
+                    <div class="real-estate">
+                        <img src="./footage/real estate/cover.png" alt="">
+                        <p>Real Estate</p>
+                    </div>
+                    <div class="artistic">
+                        <img src="./footage/artistic/artistic.cover.jpg" alt="">
+                        <p>Artistic</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reviews-container">
+                <div class="review-title">
+                    <p>Business #1</p>
+                </div>
+                <div class="people-reviews">
+                    <svg id="prev" xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-math-lower"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19 18l-14 -6l14 -6" /></svg>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore pariatur qui ratione voluptatem perferendis consequatur numquam quos! Molestiae, exercitationem doloremque esse debitis, totam ipsa ab dolore, voluptate possimus laborum soluta!</p>
+                    <svg id="next" xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-math-greater"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 18l14 -6l-14 -6" /></svg>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <div class="form-element">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+            
+                <div class="form-element">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+            
+                <div class="form-element">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+            
+                <div class="form-element">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                
+                <button type="submit">Submit</button>
+            </div>
+        </main>
+        <div class="footer">
+            <footer class="footer">
+                <p class="text">&copy; Alvaro Videography LLC.</p>
+            </footer>
+        </div>
+    <script src="alvin.js"></script>
+</body>
+</html>

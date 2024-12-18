@@ -1,0 +1,36 @@
+{
+    "product": [
+        "./footage/product/2.png",
+        "./footage/product/3.mp4",
+        "./footage/product/4.mp4",
+        "./footage/product/5.cover.png",
+        "./footage/product/6.mp4",
+        "./footage/product/7.png"
+    ],
+    
+    "real-estate": [
+        "./footage/real estate/1.png",
+        "./footage/real estate/2.png",
+        "./footage/real estate/3.png",
+        "./footage/real estate/4.png",
+        "./footage/real estate/5.png",
+        "./footage/real estate/6.png",
+        "./footage/real estate/7.png",
+        "./footage/real estate/8.png",
+        "./footage/real estate/9.png",
+        "./footage/real estate/10.png",
+        "./footage/real estate/11.png",
+        "./footage/real estate/12.png",
+        "./footage/real estate/13.png"
+    ],
+
+    "artistic": [
+        "./footage/artistic/1.jpg",
+        "./footage/artistic/2.jpg",
+        "./footage/artistic/3.jpg",
+        "./footage/artistic/4.mp4",
+        "./footage/artistic/5.mp4",
+        "./footage/artistic/6.jpg",
+        "./footage/artistic/7.jpg"
+    ]
+}

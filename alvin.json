@@ -1,0 +1,16 @@
+[
+    {
+        "business": "Business #1",
+        "review": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore pariatur qui ratione voluptatem perferendis consequatur numquam quos! Molestiae, exercitationem doloremque esse debitis, totam ipsa ab dolore, voluptate possimus laborum soluta!"
+    },
+
+    {
+        "business": "Business #2",
+        "review": "Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet."
+    },
+
+    {
+        "business": "Business #3",
+        "review": "Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta."
+    }
+]

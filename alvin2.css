@@ -1,0 +1,1277 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); /*Poppins*/
+
+@font-face {
+    font-family: "Milker";
+    src: url("./fonts/Milker.otf");
+}
+
+@font-face {
+    font-family: "RandomHandwritten";
+    src: url("./fonts/Random\ Handwritten.ttf");
+}
+
+@font-face {
+    font-family: "CuteCat";
+    src: url("./fonts/CuteCat.otf")
+}
+
+:root {
+    --letra-milker--: "Milker", sans-serif;
+    --letra-handwritten-: "RandomHandwritten", sans-serif;
+    --letra-cutecat--: "CuteCat", sans-serif;
+    --color-sobreado-reel: #E75959;
+    --bg-horizontal: url(./elements/bg.horizontal.jpg);
+    --bg-vertical: url(./elements/bg.vertical.jpg);
+    --bg-img-my-work: url(./elements/my.work.png);
+    --bg-img-get-in-touch: url(./elements/get.in.touch.png);
+    --bg-img-reviews: url(./elements/reviews.png);
+    --bg-img-circulo: url(./elements/circulo.png);
+    --bg-img-scratch-1: url(./elements/scratches1.png);
+    --bg-img-scratch-2: url(./elements/scratches2.png);
+    --bg-img-camara: url(./elements/camera-rotate.png);
+    --font-color-gris: rgba(0, 0, 0, 0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-image: var(--bg-horizontal);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/*HEADER*/
+.head-links {
+    font-family: var(--letra-handwritten-);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.4rem;
+    margin-top: 20px;
+    gap: 150px;
+    text-transform: uppercase;
+}
+
+.head-links p {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease, font-size 0.3s ease;
+    cursor: pointer;
+}
+
+/* Diagonal signature-like start */
+.head-links p::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Positions the line slightly below the text */
+    width: 20px; /* Length of the diagonal line */
+    height: 6px; /* Thickness of the diagonal line */
+    background-color: #111; /* Color of the line */
+    transform: rotate(45deg); /* Creates the diagonal effect */
+    transform-origin: left center; /* Rotate from the left side */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Smooth appearance on hover */
+}
+
+/* Straight underline, connected to the diagonal */
+.head-links p::after {
+    content: '';
+    position: absolute;
+    left: 2px; /* Starts exactly where the diagonal ends */
+    bottom: -5px;
+    width: 100%;
+    height: 6px;
+    background-color: #111;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Smooth appearance on hover */
+}
+
+.head-links p:hover::before, 
+.head-links p:hover::after {
+    opacity: 1; /* Show both the diagonal and straight line on hover */
+}
+
+.head-links p:hover {
+    transform: rotate(-5deg) scale(1.3);
+}
+
+.main-footer-wrapper {
+    position: relative;
+}
+
+/*MODAL*/
+.modal {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+}
+
+.content-img {
+    position: absolute;
+    margin: auto;
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%)
+}
+
+.content-video {
+    position: absolute;
+    margin: auto;
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%)
+}
+
+.close {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    top: 5%;
+    right: 1%;
+    cursor: pointer;
+}
+
+.nav-buttons {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    display: flex;
+    justify-content: space-around;
+    transform: translateY(-50%);
+    gap: 70%
+}
+
+.nav-buttons button {
+    background-color: transparent;
+    color: #fff;
+    font-size: 5rem;
+    font-family: monospace;
+    border: none;
+    cursor: pointer;
+    user-select: none; /*no se puede "copiar" el texto*/
+}
+
+.nav-buttons button:hover {
+    opacity: 0.7;
+}
+
+.bg-getintouch {
+    content: "";
+    position: absolute;
+    background-image: var(--bg-img-get-in-touch);
+    background-repeat: no-repeat;
+    background-size: 2400px 980px;
+    background-position: 100% 100%;
+    inset: 0; /*shorthand for top bottom left and right*/
+    z-index: -1;
+}
+
+/*MAIN*/
+.main-content {
+    position: relative;
+}
+
+.bg-mywork {  /*toda esta huevada es para poder poner opacity y que no afecte al resto del fondo*/
+    content: "";
+    position: absolute;
+    background-image: var(--bg-img-my-work);
+    background-repeat: no-repeat;
+    background-size: 2400px;
+    background-position: 80% 44.8%;
+    transform: translateX(-7%);
+    inset: 0; /*shorthand for top bottom left and right*/
+    z-index: -1;
+    opacity: 0.7;
+}
+
+.bg-circle1 {
+    position: absolute;
+    background-image: var(--bg-img-circulo);
+    background-repeat: no-repeat;
+    background-size: 2600px;
+    background-position: 50% 13%;
+    inset: 0;
+    z-index: -1;
+}
+
+.bg-circle2 {
+    position: absolute;
+    background-image: var(--bg-img-circulo);
+    background-repeat: no-repeat;
+    background-size: 1500px;
+    background-position: 50% 100%;
+    inset: 0;
+    z-index: -1;
+}
+
+.bg-reviews {
+    position: absolute;
+    background-image: var(--bg-img-reviews);
+    background-repeat: no-repeat;
+    background-size: 2000px;
+    background-position: 150% 79%;
+    inset: 0;
+    z-index: -1;
+}
+
+.bg-scratch-one {
+    position: absolute;
+    background-image: var(--bg-img-scratch-1);
+    background-repeat: no-repeat;
+    background-size: 13%;
+    background-position: 90% 21.5%;
+    inset: 0;
+    opacity: 0.3;
+}
+
+.bg-scratch-two {
+    position: absolute;
+    background-image: var(--bg-img-scratch-2);
+    background-repeat: no-repeat;
+    background-size: 13%;
+    background-position: -5% 37.5%;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+.bg-scratch-three {
+    position: absolute;
+    background-image: var(--bg-img-scratch-2);
+    background-repeat: no-repeat;
+    background-size: 13%;
+    background-position: -5% 87.3%;
+    inset: 0;
+    opacity: 0.3;
+}
+
+.bg-camera {
+    position: absolute;
+    background-image: var(--bg-img-camara);
+    background-repeat: no-repeat;
+    background-size: 13%;
+    background-position: 14% 98%;
+    inset: 0;
+    opacity: 0.4;
+    z-index: -1;
+}
+
+.bg-line1 {
+    position: absolute;
+    background-image: url(./elements/line1.png);
+    background-repeat: no-repeat;
+    background-size: 500px 200px;
+    background-position: 50% 89.5%;
+    inset: 0;
+    z-index: -1;
+}
+
+.bg-line2 {
+    position: absolute;
+    background-image: url(./elements/line2.png);
+    background-repeat: no-repeat;
+    background-size: 500px 200px;
+    background-position: 50% 91.4%;
+    inset: 0;
+    z-index: -1;
+}
+
+.bg-line3 {
+    position: absolute;
+    background-image: url(./elements/line3.png);
+    background-repeat: no-repeat;
+    background-size: 500px 200px;
+    background-position: 50% 93.3%;
+    inset: 0;
+    z-index: -1;
+}
+
+.bg-box {
+    position: absolute;
+    background-image: url(./elements/message.png);
+    background-repeat: no-repeat;
+    background-size: 550px 130px;
+    background-position: 50% 95.4%;
+    inset: 0;
+    z-index: -1;
+}
+
+/*SKULL VIDEO*/
+.skull-video {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skull-video video {
+    max-width: 100%;
+}
+
+/*INTRO-CONTAINER*/
+.intro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--letra-cutecat--);
+    position: relative;
+}
+
+.presentation-video {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    margin: 0 auto; /* Centra el contenedor */
+}
+
+.video-wrapper {
+    display: flex;
+    justify-content: center; /* Centra el video horizontalmente */
+    align-items: center; /* Centra el video verticalmente */
+    width: 100%; /* Ocupa todo el ancho */
+    height: auto;
+    margin: 0 auto; /* Centrado automático */
+    padding: 0;
+    box-shadow: none; /* Quitar la sombra fuera del 900px */
+}
+
+.presentation-video video {
+    width: 70%;
+    max-width: 1600px;
+    min-height: 800px;
+    object-fit: cover;
+    box-shadow: 10px 10px 5px var(--color-sobreado-reel);
+}
+
+.text-one {
+    font-size: 4rem;
+    margin-left: -40%;
+    width: auto;
+    position: relative;
+}
+
+.text-two {
+    font-size: 3.0rem;
+    font-weight: 50;
+    line-height: 1.4;
+    color: var(--font-color-gris);
+    margin-right: -80%;
+    margin-top: -30%;
+    transform: rotate(2deg);
+    text-align: right;
+}
+
+
+/*VIDEO-CONTAINER*/
+.three-videos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(400px, 25%));
+    justify-content: space-between; /* Space between the videos */
+    align-items: center; /* Center align items vertically */
+    padding: 0 10%; /* Add space on the left and right */
+    gap: 30px; /* Adjust the gap between videos */
+    margin-top: 300px;
+    width: 100%;
+}
+
+.three-videos img {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    max-height: 80vh; /* Set maximum height to 30% of the viewport height */
+    cursor: pointer;
+}
+
+.three-videos .product {
+    position: relative;
+    display: inline-block;
+}
+
+.three-videos .product::after {
+    content: "";
+    position: absolute;
+    top: -42px;
+    left: -11%;
+    width: 120%;
+    height: 95%;
+    background-image: url(./elements/frame2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    pointer-events: none;
+    z-index: -2;
+    transform: scaleX(1.11); /* Escala el borde un 30% más grande */
+    transform-origin: center; /* Asegura que se expanda desde el centro */
+}
+
+.three-videos .real-estate {
+    position: relative;
+    display: inline-block;
+}
+
+.three-videos .real-estate::after {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -11%;
+    width: 120%;
+    height: 97%;
+    background-image: url(./elements/frame1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    pointer-events: none;
+    z-index: -2;
+    transform: scaleX(1.16); /* Escala el borde un 30% más grande */
+    transform-origin: center; /* Asegura que se expanda desde el centro */
+}
+
+.three-videos .artistic {
+    position: relative;
+    display: inline-block;
+}
+
+.three-videos .artistic::after {
+    content: "";
+    position: absolute;
+    top: -42px;
+    left: -11%;
+    width: 120%;
+    height: 95%;
+    background-image: url(./elements/frame3.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    pointer-events: none;
+    z-index: -2;
+    transform: scaleX(1.11); /* Escala el borde un 30% más grande */
+    transform-origin: center; /* Asegura que se expanda desde el centro */
+}
+
+.three-videos p {
+    font-family: var(--letra-cutecat--);
+    display: flex;
+    justify-content: center;
+    font-size: 4rem;
+    padding-top: 40px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease, font-size 0.3s ease;
+}
+
+/* Diagonal signature-like start */
+.three-videos .product p::before {
+    content: '';
+    position: absolute;
+    left: 30%;
+    bottom: 0%;
+    width: 20px;
+    height: 6px;
+    background-color: #111;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Straight underline, connected to the diagonal */
+.three-videos .product p::after {
+    content: '';
+    position: absolute;
+    left: 30.9%;
+    bottom: 5%;
+    width: 35%;
+    height: 6px;
+    background-color: #111;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Diagonal signature-like start */
+.three-videos .real-estate p::before {
+    content: '';
+    position: absolute;
+    left: 20%;
+    bottom: 0%;
+    width: 20px;
+    height: 6px;
+    background-color: #111;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Straight underline, connected to the diagonal */
+.three-videos .real-estate p::after {
+    content: '';
+    position: absolute;
+    left: 20.9%;
+    bottom: 5%;
+    width: 60%;
+    height: 6px;
+    background-color: #111;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Diagonal signature-like start */
+.three-videos .artistic p::before {
+    content: '';
+    position: absolute;
+    left: 32%;
+    bottom: 0%;
+    width: 20px;
+    height: 6px;
+    background-color: #111;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Straight underline, connected to the diagonal */
+.three-videos .artistic p::after {
+    content: '';
+    position: absolute;
+    left: 32.9%;
+    bottom: 5%;
+    width: 37.5%;
+    height: 6px;
+    background-color: #111;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.three-videos p:hover::before,
+.three-videos p:hover::after {
+    opacity: 1;
+}
+
+.three-videos p:hover {
+    transform: rotate(-5deg) scale(1.3);
+}
+
+/*REVIEWS-CONTAINER*/
+.reviews-container {
+    margin-top: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ensure the container takes the full width */
+    padding-bottom: 150px;
+}
+
+.review-title {
+    font-family: var(--letra-cutecat--);
+    font-size: 5rem;
+    margin-right: 70%;
+    margin-bottom: 10px;
+}
+
+.people-reviews svg {
+    width: 5vw; /* Size relative to the viewport width */
+    max-width: 50px; /* Set a maximum width */
+    height: auto; /* Keep the aspect ratio */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    z-index: 10;
+    flex-shrink: 0;
+}
+
+.people-reviews svg:hover {
+    transform: scale(1.2); /* Add a subtle hover effect */
+    opacity: 0.8;
+}
+
+.people-reviews {
+    font-size: 2rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--letra-milker--);
+    width: 90%;
+    gap: 50px;
+}
+
+/*CONTACT-FORM*/
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the form content horizontally */
+    gap: 60px; /* Space between each label-input pair */
+    width: 100%;
+    margin-top: 100px;
+    padding-bottom: 200px;
+}
+
+.contact-form div {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the label and input pair as a whole */
+    width: 100%;
+    position: relative;
+}
+
+.contact-form label {
+    font-family: var(--letra-cutecat--); /* Use handwritten font for labels */
+    font-size: 3rem;
+    position: absolute;
+    left: calc(50% - 550px); /* Position label 100px left from the center of the input */
+    top: 50px;
+    text-align: right; /* Align the label text to the right */
+    width: 100px; /* Fixed width for labels */
+    flex-shrink: 0;
+}
+
+.contact-form input,
+.contact-form textarea {
+    border: none;
+    cursor: text;
+    background: none; /* No background */
+    padding: 10px;
+    font-size: 1rem;
+    color: var(--font-color-gris);
+    outline: none;
+    width: 500px; /* Set the width for the input fields */
+    text-align: center; /* Left-align text inside input fields */
+    font-family: Poppins, sans-serif; /* Use the handwritten font */
+    font-weight: bold;
+    box-shadow: none; /* Remove any additional shadow */
+    transition: border-bottom 0.1s ease;
+    position: relative;
+    top: 50px;
+    z-index: 1;
+}
+
+.contact-form textarea {
+    resize: none; /* Disables the resize handle */
+    overflow-y: auto; /* Enables vertical scrollbar when the content overflows */
+}
+
+.contact-form textarea::-webkit-scrollbar {
+    width: 5px; /* Sets the scrollbar width */
+}
+
+.contact-form textarea::-webkit-scrollbar-track {
+    background: transparent; /* Makes the track area invisible */
+}
+
+.contact-form textarea::-webkit-scrollbar-thumb {
+    background-color: #000; /* Black scrollbar thumb */
+    border-radius: 20px; /* Rounds the corners */
+}
+
+.contact-form textarea::-webkit-scrollbar-thumb:hover {
+    background: #444; /* Changes color on hover */
+}
+
+.contact-form textarea {
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #000 transparent; /* Thumb color and track color */
+}
+
+.contact-form button {
+    background-color: white;
+    color: black; /* Matches with text */
+    border: 2px solid rgba(0, 0, 0, 0.8); /* Slightly transparent black border */
+    padding: 15px 30px; /* Adjust padding for a balanced size */
+    border-radius: 50px; /* Smooth rounded corners */
+    font-family: "CuteCat", sans-serif; /* Use the same font style */
+    font-size: 18px;
+    font-weight: bolder;
+    letter-spacing: 3px;
+    text-transform: uppercase; /* Optional: All caps to look modern */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: all 0.3s ease; /* Smooth transitions */
+    cursor: pointer; /* Make it clear it's a button */
+    z-index: 10;
+    position: relative;
+    top: 50px;
+}
+
+.contact-form button:hover {
+    background-color: rgba(255, 235, 150, 0.9); /* Slightly brighter yellow */
+    border: 2px solid rgba(0, 0, 0, 1); /* Darker border on hover */
+    color: black; /* Keep text color the same */
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+    transform: scale(1.1); /* Small lift effect */
+}
+
+/*FOOTER*/
+footer{
+    margin-top: 50px;
+    z-index: -2;
+    position: relative;
+}
+
+.text {
+    color: var(--color-texto-navbar);
+    text-align: left;
+    margin-top: auto;
+    padding-bottom: 10px;
+    margin-left: 20px;
+    font-size: 1rem;
+  }
+
+/*Media querys*/
+@media screen and (max-width: 1920px) {
+    .bg-circle1 {
+        background-size: 2200px;
+        background-position: 50% 15%;
+    }
+
+    .bg-mywork {
+        background-size: 2000px;
+        background-position: 80% 43%;
+        transform: translateX(-5%);
+    }
+
+    .bg-reviews {
+        background-size: 1800px;
+        background-position: 200% 75%;
+    }
+
+    .bg-getintouch {
+        background-size: 1700px 980px;
+        background-position: 100% 100%;
+    }
+
+    .bg-line1 {
+        background-size: 500px 200px;
+        background-position: 50% 88.8%;
+    }
+    
+    .bg-line2 {
+        background-size: 500px 200px;
+        background-position: 50% 90.7%;
+    }
+    
+    .bg-line3 {
+        background-size: 500px 200px;
+        background-position: 50% 92.9%;
+    }
+    
+    .bg-box {
+        background-size: 550px 130px;
+        background-position: 50% 94.9%;
+    }
+
+    .text-one {
+        font-size: 3rem;
+    }
+
+    .text-two {
+        font-size: 2.4rem;
+    }
+}
+
+@media screen and (max-width: 1800px) {
+    .bg-mywork {
+        background-size: 1850px;
+    }
+
+    .bg-reviews {
+        background-size: 1669px;
+    }
+
+    .three-videos {
+        grid-template-columns: repeat(3, minmax(300px, 25%));
+    }
+}
+
+@media screen and (max-width: 1700px) {
+    .bg-mywork {
+        background-size: 1750px;
+    }
+
+    .bg-reviews {
+        background-size: 1600px;
+    }
+
+    .bg-getintouch {
+        background-size: 1500px 980px;
+        background-position: 100% 100%;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .bg-circle1 {
+        background-size: 2000px;
+        background-position: 50% 15%;
+    }
+
+    .bg-mywork {
+        background-size: 1650px;
+    }
+
+    .bg-reviews {
+        background-size: 1500px;
+        background-position: 150% 73%;
+    }
+
+    .bg-getintouch {
+        background-size: 1500px 980px;
+        background-position: 100% 100%;
+    }
+
+    .bg-line1 {
+        background-position: 50% 87.4%;
+    }
+
+    .bg-line2 {
+        background-position: 50% 89.7%;
+    }
+
+    .bg-line3 {
+        background-position: 50% 92%;
+    }
+
+    .bg-box {
+        background-position: 50% 94.4%;
+    }
+
+    .people-reviews {
+        font-size: 1.5rem;
+    }
+
+    .reviews-container {
+        margin-top: 400px;
+    }
+
+    .presentation-video video {
+        width: 100%; /* Ajusta el tamaño del video */
+        min-width: 800px; /* Nuevo tamaño mínimo */
+        min-height: 500px; /* Nuevo tamaño mínimo */
+    }
+
+    .text-one {
+        font-size: 2.5rem;
+    }
+
+    .text-two {
+        font-size: 2.2rem;
+        margin-top: -33%;
+        margin-right: -82%;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .presentation-video video {
+        width: 90%; /* Ajusta el tamaño del video */
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .bg-circle1 {
+        background-size: 1800px;
+        background-position: 50% 12%;
+    }
+
+    .bg-mywork {
+        background-size: 1600px;
+        background-position: 40% 43.8%;
+    }
+
+    .bg-reviews {
+        background-size: 1250px;
+        background-position: 150% 70%;
+    }
+
+    .bg-getintouch {
+        background-size: 1200px 980px;
+        background-position: 100% 100%;
+    }
+
+    .bg-line1 {
+        background-position: 50% 86.5%;
+    }
+
+    .bg-line2 {
+        background-position: 50% 89%;
+    }
+
+    .bg-line3 {
+        background-position: 50% 91.5%;
+    }
+
+    .bg-box {
+        background-position: 50% 94.2%;
+    }
+
+    .presentation-video video {
+        width: 80%; /* Ajusta el tamaño del video */
+    }
+
+    .text-one {
+        font-size: 2.2rem;
+    }
+
+    .text-two {
+        font-size: 2rem;
+    }
+
+    .three-videos {
+        grid-template-columns: repeat(3, 25%);
+    }
+
+    .three-videos p {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .bg-circle1 {
+        background-size: 1600px;
+        background-position: 50% 11.5%;
+    }
+
+    .bg-mywork {
+        background-size: 1400px;
+        background-position: 60% 43.8%;
+    }
+
+    .bg-reviews {
+        background-size: 1200px;
+        background-position: 150% 70%;
+    }
+
+    .bg-getintouch {
+        background-size: 1100px 980px;
+        background-position: 100% 100%;
+    }
+
+    .bg-line1 {
+        background-position: 50% 86%;
+    }
+
+    .bg-line2 {
+        background-position: 50% 88.5%;
+    }
+
+    .bg-line3 {
+        background-position: 50% 91.2%;
+    }
+
+    .bg-box {
+        background-position: 50% 94%;
+    }
+
+    .head-links {
+        font-size: 3rem;
+        gap: 100px;
+    }
+
+    .presentation-video video {
+        width: 75%;
+    }
+
+    .text-one {
+        font-size: 2rem;
+    }
+
+    .text-two {
+        font-size: 2rem;
+        margin-top: -35%;
+        margin-right: -82%;
+    }
+
+    .review-title {
+        font-size: 3rem;
+    }
+
+    .people-reviews {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 1194px) {
+    .bg-circle1 {
+        background-size: 1400px;
+        background-position: 50% 11%;
+    }
+
+    .bg-mywork {
+        background-size: 1300px;
+        background-position: 90% 43.8%;
+        transform: translateX(0);
+    }
+
+    .bg-reviews {
+        background-size: 1100px;
+        background-position: 180% 70%;
+    }
+
+    .bg-line1 {
+        background-position: 50% 87%;
+        background-size: 450px 200px;
+    }
+
+    .bg-line2 {
+        background-position: 50% 89.8%;
+        background-size: 450px 200px;
+    }
+
+    .bg-line3 {
+        background-position: 50% 92.5%;
+        background-size: 450px 200px;
+    }
+
+    .bg-box {
+        background-position: 50% 95%;
+        background-size: 500px 130px;
+    }
+
+    .bg-circle2 {
+        background-size: 1300px;
+    }
+
+    .contact-form {
+        margin-top: 0;
+    }
+
+    .contact-form label {
+        font-size: 2rem;
+        left: calc(50% - 450px);
+        top: 120px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        top: 100px;
+        width: 450px;
+    }
+
+    .contact-form button {
+        top: 70px;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .bg-circle1 {
+        background-size: 1300px;
+        background-position: 50% 10%;
+    }
+
+    .bg-mywork {
+        background-size: 1100px;
+        background-position: 100% 45%;
+        transform: translateX(-70px);
+    }
+
+    .bg-reviews {
+        background-size: 1100px;
+        background-position: -300% 70%;
+    }
+
+    .bg-line1 {
+        background-position: 50% 85.5%;
+        background-size: 450px 200px;
+    }
+
+    .bg-line2 {
+        background-position: 50% 88.8%;
+        background-size: 450px 200px;
+    }
+
+    .bg-line3 {
+        background-position: 50% 91.5%;
+        background-size: 450px 200px;
+    }
+
+    .bg-box {
+        background-position: 50% 94.5%;
+        background-size: 500px 130px;
+    }
+
+    .head-links {
+        font-size: 2rem;
+    }
+
+    .three-videos {
+        margin-top: 150px;
+    }
+
+    .reviews-container {
+        margin-top: 300px;
+    }
+
+    .presentation-video video {
+        width: 60%; /* Ajusta el tamaño del video */
+    }
+
+    .text-one {
+        font-size: 1.8rem;
+    }
+
+    .text-two {
+        font-size: 1.8rem;
+        margin-top: -50%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .bg-mywork {
+        background-size: 1050px;
+        background-position: 300% 45%;
+        transform: translateX(0);
+    }
+
+    .bg-reviews {
+        background-size: 1000px;
+        background-position: 400% 69%;
+    }
+
+    .bg-getintouch {
+        background-size: 900px 950px;
+        background-position: 100% 100%;
+    }
+
+    .text-one {
+        font-size: 2rem;
+    }
+
+    .text-two {
+        font-size: 2rem;
+        margin-top: -35%;
+        margin-right: -82%;
+    }
+
+    .three-videos {
+        margin-top: 100px;
+    }
+
+    .three-videos p {
+        font-size: 2.5rem;
+    }
+
+    .review-title {
+        font-size: 3.5rem;
+        margin-right: 65%;
+    }
+
+    .people-reviews {
+        font-size: 1.1rem;
+    }
+
+}
+
+@media screen and (max-width: 926px) {
+    .bg-mywork {
+        background-size: 1000px;
+        background-position: 100% 47%;
+        transform: translateX(0);
+    }
+
+    .bg-reviews {
+        background-size: 900px;
+        background-position: 400% 72%;
+    }
+
+    .bg-getintouch {
+        background-size: 900px 850px;
+        background-position: 100% 100%;
+    }
+
+    .bg-circle2 {
+        background-size: 1000px;
+        background-position: 50% 98%;
+    }
+
+    .bg-line1 {
+        background-position: 50% 86.8%;
+        background-size: 300px 200px;
+    }
+
+    .bg-line2 {
+        background-position: 50% 89.8%;
+        background-size: 300px 200px;
+    }
+
+    .bg-line3 {
+        background-position: 50% 92.5%;
+        background-size: 300px 200px;
+    }
+
+    .bg-box {
+        background-position: 50% 94%;
+        background-size: 400px 90px;
+    }
+
+    .presentation-video {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .video-wrapper {
+        width: 394px; /* Ancho exacto */
+        height: 700px; /* Altura exacta */
+        box-shadow: 5px 5px 10px var(--color-sobreado-reel); /* Sombra al contenedor */
+        overflow: hidden; /* Evita desbordamientos */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .presentation-video video {
+        width: 100%; /* Ajusta al tamaño del contenedor */
+        height: 100%; /* Llena el contenedor */
+        object-fit: contain; /* Asegura que el video cubra todo el espacio */
+        display: block; /* Evita espacio adicional */
+        margin: 0;
+    }
+
+    .three-videos {
+        margin-top: 100px;
+    }
+
+    #message {
+        top: 100px;
+    }
+
+    .contact-form label {
+        font-size: 2rem;
+        left: calc(50% - 400px);
+        top: 120px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        top: 120px;
+        width: 350px;
+        font-size: .8rem;
+        padding: 5px
+    }
+
+    .contact-form button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .contact-form {
+        margin-top: -100px;
+    }
+}
