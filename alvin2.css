@@ -47,6 +47,10 @@ body {
     background-attachment: fixed;
 }
 
+.main-content {
+    overflow: hidden;
+}
+
 /*HEADER*/
 .head-links {
     font-family: var(--letra-handwritten-);
@@ -359,7 +363,6 @@ body {
 .presentation-video video {
     width: 70%;
     max-width: 1600px;
-    min-height: 800px;
     object-fit: cover;
     box-shadow: 10px 10px 5px var(--color-sobreado-reel);
 }
@@ -471,6 +474,7 @@ body {
 .three-videos p {
     font-family: var(--letra-cutecat--);
     display: flex;
+    white-space: nowrap;
     justify-content: center;
     font-size: 4rem;
     padding-top: 40px;
@@ -824,81 +828,17 @@ footer{
         background-size: 1650px;
     }
 
+    .bg-scratch-two {
+        background-position: -4% 35%;
+    }
+
     .bg-reviews {
         background-size: 1500px;
-        background-position: 150% 73%;
+        background-position: 200% 73%;
     }
 
     .bg-getintouch {
         background-size: 1500px 980px;
-        background-position: 100% 100%;
-    }
-
-    .bg-line1 {
-        background-position: 50% 87.4%;
-    }
-
-    .bg-line2 {
-        background-position: 50% 89.7%;
-    }
-
-    .bg-line3 {
-        background-position: 50% 92%;
-    }
-
-    .bg-box {
-        background-position: 50% 94.4%;
-    }
-
-    .people-reviews {
-        font-size: 1.5rem;
-    }
-
-    .reviews-container {
-        margin-top: 400px;
-    }
-
-    .presentation-video video {
-        width: 100%; /* Ajusta el tamaño del video */
-        min-width: 800px; /* Nuevo tamaño mínimo */
-        min-height: 500px; /* Nuevo tamaño mínimo */
-    }
-
-    .text-one {
-        font-size: 2.5rem;
-    }
-
-    .text-two {
-        font-size: 2.2rem;
-        margin-top: -33%;
-        margin-right: -82%;
-    }
-}
-
-@media screen and (max-width: 1500px) {
-    .presentation-video video {
-        width: 90%; /* Ajusta el tamaño del video */
-    }
-}
-
-@media screen and (max-width: 1400px) {
-    .bg-circle1 {
-        background-size: 1800px;
-        background-position: 50% 12%;
-    }
-
-    .bg-mywork {
-        background-size: 1600px;
-        background-position: 40% 43.8%;
-    }
-
-    .bg-reviews {
-        background-size: 1250px;
-        background-position: 150% 70%;
-    }
-
-    .bg-getintouch {
-        background-size: 1200px 980px;
         background-position: 100% 100%;
     }
 
@@ -915,11 +855,79 @@ footer{
     }
 
     .bg-box {
-        background-position: 50% 94.2%;
+        background-position: 50% 94%;
     }
 
-    .presentation-video video {
-        width: 80%; /* Ajusta el tamaño del video */
+    .people-reviews {
+        font-size: 1.5rem;
+    }
+
+    .reviews-container {
+        margin-top: 400px;
+    }
+
+    .text-one {
+        font-size: 2.5rem;
+    }
+
+    .text-two {
+        font-size: 2.2rem;
+        margin-top: -33%;
+        margin-right: -82%;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .bg-mywork {
+        background-size: 1600px;
+        background-position: 40% 41%;
+    }
+
+    .bg-reviews {
+        background-position: 100% 72%;
+        transform: translateX(140px);
+    }
+
+    .bg-scratch-two {
+        background-position: -4% 33%;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .bg-circle1 {
+        background-size: 1800px;
+        background-position: 50% 12%;
+    }
+
+    .bg-mywork {
+        background-size: 1500px;
+        background-position: 40% 40.5%;
+    }
+
+    .bg-reviews {
+        background-position: 100% 70%;
+        transform: translateX(140px);
+    }
+
+    .bg-getintouch {
+        background-size: 1200px 980px;
+        background-position: 100% 100%;
+    }
+
+    .bg-line1 {
+        background-position: 50% 85.5%;
+    }
+
+    .bg-line2 {
+        background-position: 50% 88.2%;
+    }
+
+    .bg-line3 {
+        background-position: 50% 91%;
+    }
+
+    .bg-box {
+        background-position: 50% 93.5%;
     }
 
     .text-one {
@@ -945,14 +953,19 @@ footer{
         background-position: 50% 11.5%;
     }
 
+    .bg-scratch-one {
+        background-position: 90% 20%;
+    }
+
     .bg-mywork {
         background-size: 1400px;
-        background-position: 60% 43.8%;
+        background-position: 50% 40%;
     }
 
     .bg-reviews {
-        background-size: 1200px;
-        background-position: 150% 70%;
+        background-size: 1300px;
+        background-position: 100% 70%;
+        transform: translateX(120px);
     }
 
     .bg-getintouch {
@@ -961,28 +974,24 @@ footer{
     }
 
     .bg-line1 {
-        background-position: 50% 86%;
+        background-position: 50% 85%;
     }
 
     .bg-line2 {
-        background-position: 50% 88.5%;
+        background-position: 50% 87.5%;
     }
 
     .bg-line3 {
-        background-position: 50% 91.2%;
+        background-position: 50% 90.7%;
     }
 
     .bg-box {
-        background-position: 50% 94%;
+        background-position: 50% 93.2%;
     }
 
     .head-links {
         font-size: 3rem;
         gap: 100px;
-    }
-
-    .presentation-video video {
-        width: 75%;
     }
 
     .text-one {
@@ -1006,43 +1015,45 @@ footer{
 
 @media screen and (max-width: 1194px) {
     .bg-circle1 {
-        background-size: 1400px;
-        background-position: 50% 11%;
+        background-size: 1500px;
+        background-position: 50% 12%;
     }
 
     .bg-mywork {
         background-size: 1300px;
-        background-position: 90% 43.8%;
-        transform: translateX(0);
-    }
-
-    .bg-reviews {
-        background-size: 1100px;
-        background-position: 180% 70%;
+        background-position: 50% 39%;
     }
 
     .bg-line1 {
-        background-position: 50% 87%;
+        background-position: 50% 85%;
         background-size: 450px 200px;
     }
 
     .bg-line2 {
-        background-position: 50% 89.8%;
+        background-position: 50% 88%;
         background-size: 450px 200px;
     }
 
     .bg-line3 {
-        background-position: 50% 92.5%;
+        background-position: 50% 91.5%;
         background-size: 450px 200px;
     }
 
     .bg-box {
-        background-position: 50% 95%;
-        background-size: 500px 130px;
+        background-position: 50% 94.5%;
+        background-size: 500px 140px;
     }
 
+    .submit-button {
+        top: 10px;
+    }
+    
     .bg-circle2 {
         background-size: 1300px;
+    }
+
+    .three-videos {
+        margin-top: 200px;
     }
 
     .contact-form {
@@ -1068,43 +1079,46 @@ footer{
 
 @media screen and (max-width: 1080px) {
     .bg-circle1 {
-        background-size: 1300px;
-        background-position: 50% 10%;
+        background-size: 1200px;
+        background-position: 50% 13.8%;
     }
 
     .bg-mywork {
         background-size: 1100px;
-        background-position: 100% 45%;
-        transform: translateX(-70px);
+        background-position: 100% 35.5%;
+    }
+
+    .bg-scratch-two {
+        background-position: -4% 30%;
     }
 
     .bg-reviews {
         background-size: 1100px;
-        background-position: -300% 70%;
+        background-position: 200% 65%;
     }
 
     .bg-line1 {
-        background-position: 50% 85.5%;
+        background-position: 50% 83%;
         background-size: 450px 200px;
     }
 
     .bg-line2 {
-        background-position: 50% 88.8%;
+        background-position: 50% 86.5%;
         background-size: 450px 200px;
     }
 
     .bg-line3 {
-        background-position: 50% 91.5%;
+        background-position: 50% 90%;
         background-size: 450px 200px;
     }
 
     .bg-box {
-        background-position: 50% 94.5%;
+        background-position: 50% 93.5%;
         background-size: 500px 130px;
     }
 
     .head-links {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .three-videos {
@@ -1124,55 +1138,96 @@ footer{
     }
 
     .text-two {
-        font-size: 1.8rem;
-        margin-top: -50%;
+        font-size: 1.5rem;
+        margin-top: -30%;
+        margin-right: -75%;
     }
 }
 
 @media screen and (max-width: 1024px) {
+    .bg-circle1 {
+        background-size: 1100px;
+        background-position: 50% 14%;
+    }
+
     .bg-mywork {
-        background-size: 1050px;
-        background-position: 300% 45%;
-        transform: translateX(0);
+        background-size: 1100px;
+        background-position: 50% 35%;
+        overflow: visible;
     }
 
     .bg-reviews {
         background-size: 1000px;
-        background-position: 400% 69%;
+        background-position: 100% 62%;
+        transform: translateX(100px);
     }
 
     .bg-getintouch {
-        background-size: 900px 950px;
+        background-size: 1000px 980px;
         background-position: 100% 100%;
     }
 
+    .bg-circle2 {
+        background-size: 1200px;
+        background-position: 50% 96%;
+    }
+
+    .bg-line1 {
+        background-position: 50% 81.5%;
+        background-size: 400px 200px;
+    }
+
+    .bg-line2 {
+        background-position: 50% 85%;
+        background-size: 400px 200px;
+    }
+
+    .bg-line3 {
+        background-position: 50% 88.5%;
+        background-size: 400px 200px;
+    }
+
+    .bg-box {
+        background-position: 50% 91.5%;
+        background-size: 450px 130px;
+    }
+
+    .submit-button {
+        top: 0px;
+    }
+
+    .reviews-container {
+        margin-top: 250px;
+    }
+
     .text-one {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
 
     .text-two {
-        font-size: 2rem;
-        margin-top: -35%;
-        margin-right: -82%;
+        font-size: 1.3rem;
+        margin-top: -30%;
+        margin-right: -75%;
     }
 
-    .three-videos {
-        margin-top: 100px;
+    .contact-form {
+        margin-top: 40px;
+        gap: 50px
     }
 
-    .three-videos p {
-        font-size: 2.5rem;
+    .contact-form label {
+        top: 50px;
     }
 
-    .review-title {
-        font-size: 3.5rem;
-        margin-right: 65%;
+    .contact-form input,
+    .contact-form textarea {
+        top: 50px;
+        width: 400px;
     }
 
-    .people-reviews {
-        font-size: 1.1rem;
+    .contact-form button {
+        top: 30px;
     }
-
 }
 
 @media screen and (max-width: 926px) {
