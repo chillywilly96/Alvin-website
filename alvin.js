@@ -147,13 +147,13 @@ document.getElementById("next").addEventListener("click", function() {
     updateReview();
 });
 
-// Cambiar video a formato vertical con width 1080 px
+// Cambiar video a formato vertical con width 915 px
 const presentationVideo = document.querySelector(".presentation-video video");
 const horizontalSrc = "./vids/nova.reel.mp4";
 const verticalSrc = "./vids/nova.reel.vertical.mp4";
 
 function updateVideoFormat() {
-    if (window.innerWidth <= 926) {
+    if (window.innerWidth <= 915) {
         if (presentationVideo.src !== verticalSrc) {
             presentationVideo.src = verticalSrc;
             presentationVideo.load();
@@ -168,3 +168,17 @@ function updateVideoFormat() {
 
 window.addEventListener('load', updateVideoFormat);
 window.addEventListener('resize', updateVideoFormat);
+
+// Cambiar text-two a dos lineas con width 915 px
+const textTwo = document.querySelector(".text-two");
+
+function updateTextTwo() {
+    if (window.innerWidth <= 915) {
+        textTwo.innerHTML = "<p>With experience in different styles, portraits and brands,<br>Alvaro has worked and achieved different projects, internationally</p>";
+    } else {
+        textTwo.innerHTML = "<p>With<br>experience<br>in different<br>styles,<br>portraits<br>and brands,<br>Alvaro<br>has worked<br>and achieved<br>different<br>projects,<br>internationally</p>"
+    }
+}
+
+window.addEventListener('resize', updateTextTwo);
+window.addEventListener('load', updateTextTwo);
