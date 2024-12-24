@@ -423,7 +423,7 @@ body {
     background-size: contain;
     pointer-events: none;
     z-index: -2;
-    transform: scaleX(1.11); /* Escala el borde un 30% más grande */
+    transform: scaleX(1.11); /* Escala el borde un 1.11 más grande */
     transform-origin: center; /* Asegura que se expanda desde el centro */
 }
 
@@ -1441,5 +1441,104 @@ footer{
 
     .contact-form button {
         top: 50px;
+    }
+}
+
+@media screen and (max-width: 667px) {
+    .bg-circle1 {
+        background-position: 50% 10%;
+    }
+
+    .bg-mywork {
+        background-size: 700px;
+        background-position: 50% 36%;
+    }
+
+    .bg-reviews {
+        background-size: 600px;
+        background-position: 50% 76%;
+    }
+
+    .bg-getintouch {
+        background-size: 700px 750px;
+        background-position: 100% 100%;
+    }
+
+    .bg-circle2 {
+        background-size: 800px;
+        background-position: 50% 97%;
+    }
+
+    .bg-line1 {
+        background-size: 250px 200px;
+        background-position: 50% 89%;
+    }
+
+    .bg-line2 {
+        background-size: 250px 200px;
+        background-position: 50% 91.5%;
+    }
+
+    .bg-line3 {
+        background-size: 250px 200px;
+        background-position: 50% 93.5%;
+    }
+
+    .bg-box {
+        background-size: 320px 90px;
+        background-position: 50% 94.5%;
+    }
+
+    .head-links {
+        font-size: 1.8rem;
+    }
+
+    .text-one {
+        font-size: 1.4rem;
+    }
+
+    .text-two {
+        font-size: 1.2rem;
+        margin-right: -20%;
+    }
+
+    .three-videos {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        margin-top: 150px;
+        justify-items: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .three-videos img {
+        max-height: 300px;
+        padding-bottom: 25px;	
+    }
+
+    .three-videos p {
+        font-size: 1.8rem;
+        padding-top: 0px;
+        margin-bottom: 40px;
+    }
+
+    .reviews-container {
+        margin-top: 150px;
+    }
+
+    .contact-form label {
+        font-size: 1.2rem;
+        left: calc(50% - 330px);
+        top: 120px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        top: 120px;
+        width: 300px;
+    }
+
+    .contact-form button {
+        top: 30px;
     }
 }
