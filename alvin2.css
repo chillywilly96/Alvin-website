@@ -589,6 +589,7 @@ body {
     font-size: 5rem;
     margin-right: 70%;
     margin-bottom: -10px;
+    white-space: nowrap; /*hace que siempre se mantenga en una línea el texto*/
 }
 
 .people-reviews svg {
@@ -1540,5 +1541,148 @@ footer{
 
     .contact-form button {
         top: 30px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .head-links {
+        font-size: 1.6rem;
+        gap: 60px;
+    }
+
+    .text-one {
+        padding-left: 140px;
+    }
+
+    .text-two {
+        margin-right: -13%;
+    }
+
+    .bg-mywork {
+        background-size: 650px;
+        background-position: 50% 35%;
+    }
+
+    .bg-reviews {
+        background-size: 550px;
+        background-position: 0% 75%;
+    }
+
+    .review-title {
+        font-size: 2rem;
+    }
+
+    .people-reviews p {
+        font-size: 0.8rem;
+    }
+
+    .contact-form label {
+        left: calc(50% - 310px);
+        top: 120px;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .head-links {
+        font-size: 1.4rem;
+        gap: 40px;
+    }
+
+    .text-one {
+        font-size: 1.1rem;
+        padding-left: 120px;
+    }
+
+    .text-two {
+        font-size: 1.1rem;
+        margin-right: -20%;
+    }
+
+    .presentation-video {
+        width: 75%;
+    }
+
+    .bg-circle1 {
+        background-size: 600px;
+        background-position: 50% 4%;
+    }
+
+    .bg-mywork {
+        background-size: 470px;
+        background-position: 40% 30%;
+    }
+
+    .bg-reviews {
+        background-size: 400px;
+        background-position: 0% 73%;
+        transform: translateX(65px);
+    }
+
+    .review-title {
+        font-size: 1.5rem;
+        padding-left: 20px;
+    }
+
+    .bg-circle2 {
+        background-size: 600px;
+        background-position: 50% 95%;
+    }
+
+    .bg-getintouch {
+        background-size: 500px 650px;
+        background-position: 100% 100%;
+    }
+
+    .bg-line1 {
+        background-size: 200px 100px;
+        background-position: 50% 88.7%;
+    }
+
+    .bg-line2 {
+        background-size: 200px 100px;
+        background-position: 50% 90%;
+    }
+
+    .bg-line3 {
+        background-size: 200px 100px;
+        background-position: 50% 91.2%;
+    }
+
+    .bg-box {
+        background-size: 220px 70px;
+        background-position: 50% 92.7%;
+    }
+
+    .contact-form button {
+        padding: 10px 15px;
+        font-size: 0.8rem;
+        top: -5px
+    }
+
+    .contact-form {
+        gap: 10px;
+    }
+
+    .contact-form label {
+        font-size: 1rem;
+        left: calc(50% - 250px);
+        top: 30px;
+    }
+
+    .contact-form input{
+        top: 20px;
+        width: 250px;
+        font-size: .8rem;
+        padding: 5px        
+    }
+
+    .contact-form textarea {
+        top: 25px !important;
+        width: 200px;
+        font-size: .6rem;
+    }
+
+    .footer p {
+        font-size: 0.8rem;
     }
 }

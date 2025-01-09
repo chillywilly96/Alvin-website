@@ -169,11 +169,13 @@ function updateVideoFormat() {
 window.addEventListener('load', updateVideoFormat);
 window.addEventListener('resize', updateVideoFormat);
 
-// Cambiar text-two a dos lineas con width 915 px
+// Cambiar text-two a dos lineas con width 915 px y a tres lineas con 428 px
 const textTwo = document.querySelector(".text-two");
 
 function updateTextTwo() {
-    if (window.innerWidth <= 915) {
+    if (window.innerWidth <= 428) {
+        textTwo.innerHTML = "<p>With experience in different styles,<br>portraits and brands, Alvaro has worked<br>and achieved different projects, internationally</p>"
+    } else if(window.innerWidth <= 915) {
         textTwo.innerHTML = "<p>With experience in different styles, portraits and brands,<br>Alvaro has worked and achieved different projects, internationally</p>";
     } else {
         textTwo.innerHTML = "<p>With<br>experience<br>in different<br>styles,<br>portraits<br>and brands,<br>Alvaro<br>has worked<br>and achieved<br>different<br>projects,<br>internationally</p>"
