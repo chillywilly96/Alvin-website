@@ -1609,13 +1609,17 @@ footer{
 
     .bg-mywork {
         background-size: 470px;
-        background-position: 40% 30%;
+        background-position: 40% 33%;
     }
 
     .bg-reviews {
         background-size: 400px;
-        background-position: 0% 73%;
+        background-position: 0% 77.5%;
         transform: translateX(65px);
+    }
+
+    .reviews-container {
+        transform: translateY(-50px);
     }
 
     .review-title {
@@ -1635,12 +1639,12 @@ footer{
 
     .bg-line1 {
         background-size: 200px 100px;
-        background-position: 50% 88.7%;
+        background-position: 50% 88.9%;
     }
 
     .bg-line2 {
         background-size: 200px 100px;
-        background-position: 50% 90%;
+        background-position: 50% 90.1%;
     }
 
     .bg-line3 {
@@ -1672,7 +1676,7 @@ footer{
     .contact-form input{
         top: 20px;
         width: 250px;
-        font-size: .8rem;
+        font-size: .6rem;
         padding: 5px        
     }
 
